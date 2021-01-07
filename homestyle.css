@@ -30,14 +30,22 @@ img{
 
 .banner > img{
     display: block;
-    width: 20%;
+    width: 250px;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
     /*border: 4px solid #333;*/
     border-radius: 10%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.23);
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.23);*/
     margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(72, 194, 112, 0.2), 0 6px 6px rgba(72,194,112,0.23);
+    
+}
+
+.banner > img:hover{
+    animation-name: corners;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 
@@ -45,6 +53,11 @@ body{
     margin: 0 auto;
     color: #333;
     line-height: 1.6;
+    background-color: white;
+}
+
+#name{
+    letter-spacing: .15em;
 }
 
 #title, .subtitle{
@@ -69,12 +82,27 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: minmax(100px, auto);
     margin: 30px;
+    
 }
+
 
 main{
     width: 60%;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 600px) {
+    main {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        margin: 30px;
+    }
+  }
 
 #about{
     grid-column: 1/3;
@@ -94,8 +122,10 @@ main{
 .card{
     margin: 5px;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(72, 194, 112, 0.2), 0 6px 6px rgba(72,194,112,0.23);
+    /*box-shadow: 0 10px 20px rgba(72, 194, 112, 0.2), 0 6px 6px rgba(72,194,112,0.23);*/
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.2);
     border-radius: 5px;
+    color: #333;
 }
 
 .card:hover{
@@ -131,11 +161,11 @@ a:hover{
 }
 
 .navbar{
-    background-color: white;
-    color: #333;
+    background-color: rgb(20, 21, 27);
+    color: #ccc;
     height: 70px;
     border-bottom: 2px solid rgba(0,0,0,0.2);
-    
+    box-shadow: 0 10px 20px rgba(72, 194, 112, 0.2), 0 6px 6px rgba(72,194,112,0.23);
     /*box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.23);*/
 }
 
@@ -144,7 +174,7 @@ a:hover{
 }
 
 .navbar a{
-    color: #333;
+    color: #ccc;
     padding: 10px;
     margin: 0 5px;
 }
@@ -230,6 +260,56 @@ input[type=submit]:hover{
     background-color: #555;
 }
 
+/*flying rectangle*/
+.rect{
+    background: linear-gradient(35deg, #ccffff, #ffcccc);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 20%;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    z-index: -1;
+    animation-name: float;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+}
+
+.rect2{
+    
+        background: linear-gradient(35deg, #ccffff, #ffcccc);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.23);
+        border-radius: 20%;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 200px;
+        left: 20px;
+        z-index: -1;
+        animation-name: float2;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+    
+}
+
+.rect3{
+    background: linear-gradient(35deg, #ccffff, #ffcccc);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.23);
+        border-radius: 20%;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: 200px;
+        left: 20px;
+        z-index: -1;
+        animation-name: float3;
+        animation-duration: 100s;
+        animation-iteration-count: infinite;
+}
+
+
+
 @keyframes transform{
     100%{
         transform: scale(1.05);
@@ -246,6 +326,73 @@ input[type=submit]:hover{
 
     100%{
         height: 400px;
+    }
+}
+
+@keyframes float{
+    0%{
+        top: 100px;
+        left: 20px;
+    }
+
+    50%{
+        top:100px;
+        left: 2000px;
+    }
+
+    100%{
+        top: 100px;
+        left: 20px;
+    }
+}
+
+@keyframes float2{
+    0%{
+        top: 500px;
+        left: 20px;
+    }
+
+    50%{
+        top:500px;
+        left: 2000px;
+    }
+
+    100%{
+        top: 500px;
+        left: 20px;
+    }
+}
+
+@keyframes float3{
+    0%{
+        top: 20px;
+        left: 400px;
+    }
+
+    50%{
+        top:1000px;
+        left: 700px;
+    }
+
+    100%{
+        top: 20px;
+        left: 300px;
+    }
+}
+
+@keyframes corners{
+    0%{
+        border-radius: 5%;
+        transform: scale(1);
+    }
+
+    20%{
+        border-radius: 35%;
+    }
+
+    100%{
+        border-radius: 100%;
+        transform: scale(1.1);
     }
 }
 
